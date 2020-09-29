@@ -1,0 +1,89 @@
+
+hostname	:	bandit.labs.overthewire.org
+
+ping bandit.labs.overthewire.org
+
+ipaddress	:	176.9.9.172
+port number	:	2220
+
+ssh bandit0@176.9.9.172 -p 2220
+
+
+bandit0	:bandit0			   : 
+	 cat readme
+
+bandit1	:boJ9jbbUNNfktd78OOpsqOltutMc3MY1 : 
+	 cat ./- 
+
+bandit2	:CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9 : 
+	 cat spaces\ in\ this\ filename
+
+bandit3	:UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK : 
+	 cd inhere/ && cat .hidden
+
+bandit4	:pIwrPrtPN36QITSp3EQaw936yaFoFgAB : 
+	 cd inhere/ && cat ./-file07
+
+bandit5	:koReBOKuIDDepwhWk7jZC0RTdopnAYKh :
+ 	 cd inhere/ && cat ./maybehere07/.file2
+
+bandit6	:DXjZPULLxYr17uwoI01bNLQbtFemEgo7 : 
+	 cd / && find -user bandit7 && cat /var/lib/dpkg/info/bandit7.password
+
+bandit7	:HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs : 
+	 grep millionth data.txt
+
+bandit8 :cvX2JJa4CFALtqS87jk27qwqGhBM9plV : 
+	 cat data.txt | sort | uniq -u
+
+bandit9	:UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR : 
+	 strings data.txt | grep '='	
+
+bandit10:truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk :
+         base64 -d data.txt
+
+bandit11:IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR : 
+	 https://cryptii.com/pipes/caesar-cipher (paste plain text and n is 13)
+
+bandit12:5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu : 
+	 cd  /tmp/myname (tar xvf , file ,mv to rename file and extract until get ascii)
+
+bandit13:8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL : 
+	 ssh -i sshkey.private bandit14@localhost
+
+bandit14:<use ssh privatekey for password>: 
+	 cat /etc/bandit_pass/bandit14  
+	 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e   
+	 echo 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e | nc localhost 30000
+
+bandit15:BfMYroe26WYalil77FoDi9qh59eK5xNr : 
+	 openssl s_client -ign_eof -connect localhost:30001
+	 BfMYroe26WYalil77FoDi9qh59eK5xNr	
+
+bandit16:cluFn7wTiGryunymYOu4RcffSxQluehd :  
+	 nmap -p 31000-32000 localhost
+	 openssl s_client -ign_eof -connect localhost:31790	
+	 cluFn7wTiGryunymYOu4RcffSxQluehd	
+	 copy and paste the private key and change the "chmod 600"
+	 ssh -i ssh.private bandit17@176.9.9.172 -p 2220
+
+bandit17:<login through using above steps>:
+	 diff passwords.old password.new
+	 kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd (password to login to bandit18)
+
+bandit18:kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd:
+	 ssh bandit18@localhost (if you login bandit18 with the above password 
+	 through ssh it will automatically logout and say "byebye!" 
+	 because someone made a script to automatically logout when login using ssh)
+	 so i am going force to open the shell using -t flag 
+	 ssh -t bandit@localhost /bin/sh
+	 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x (password for bandit19)
+
+bandit19:IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x:
+	 ./bandit20-do cat /etc/bandit_pass/bandit20
+    	 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+bandit20:GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+	 
+
+
